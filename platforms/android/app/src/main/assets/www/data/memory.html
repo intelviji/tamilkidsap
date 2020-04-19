@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+  <title>Difficult</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<script src="../js/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+
+#dialog{
+background-color:rgba(0,0,0,0.8);
+
+}
+#dialog a{
+color:white;
+}
+#dialog a:hover
+{
+color:white;
+font-weight:bolder;
+}
+div#memory_board
+{
+	background:pink;
+	width:100%;
+	height:100%;
+	padding-top:20px;
+	margin-top:15%;
+	padding-bottom:15%;
+}
+div.col-xs-2
+{
+	//border:#000 1px solid; 
+padding:0;
+	margin:0;
+text-align:center;
+
+}
+	div.col-xs-4
+{
+	//border:#000 1px solid; 
+padding:1px;
+	margin:0;
+text-align:center;
+
+}
+.row
+{
+margin:1px;
+}
+.tile_div
+{
+
+color:#88288a;
+font-size:40px;
+font-weight:bolder;
+
+	font-family:Georgia;
+	position:relative;
+	display:block;
+	
+}
+img
+	{
+	display:block;
+	}
+.col-xs-12
+	{
+		text-align:center;
+		padding-right:10px;
+	}
+	.col-xs-12,
+	.col-md-12
+	{
+		background-color:maroon;
+		border-radius:14px;
+	}
+	.btn{
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+	
+	}
+	a:hover
+	{
+	color:white;
+	font-weight:bolder;
+	}
+	.container-fluid
+	{
+	padding:0px 0px 0px 0px !important;
+	margin:0 0 0 0 !important;
+	}
+</style>
+<script>
+$(document).ready(function() {
+	window.localStorage.setItem("page", "any");
+var memory_array;
+var memory_values = [];
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+var stage = 1;
+$("#dialog").hide();
+$("#gamearea").hide();
+$("#levels").show("slow");
+$("#levels a").click(function(event){
+event.preventDefault();
+stage = $(this).data("stage");
+$("#levels").slideUp("slow");
+$("#gamearea").slideDown("slow");
+$.fn.newBoard(stage);
+
+
+});
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+$.fn.newBoard = function(stage){
+	tiles_flipped = 0;
+	var output = '';
+var jcount = 3;
+if(stage == 1 )
+ memory_array = ['a','a','aa','aa','lete','lete','ee','ee','u','u','uu','uu'];
+ else if(stage == 2)
+ {jcount = 4;
+ memory_array = ['aamai','aamai','frog','frog','singam','singam','gorilla','gorilla','nathai','nathai','rhino','rhino','onaai','onaai','puli','puli','paambu','paambu','yaanai','yaanai'];
+ }
+else if(stage == 3)
+{
+jcount = 4;
+ memory_array = ['butterfly','butterfly','cricketpoochi','cricketpoochi','vandu','vandu','vettukili','vettukili','karappan','karappan','e','e','thel','thel','erumbu','erumbu','iraalmeen','iraalmeen','dolphin','dolphin','jellymeen','jellymeen','kadarkuthirai','kadarkuthirai','octopus','octopus','singameen','singameen'];
+ }
+ else if(stage == 4)
+ {
+ jcount = 4;
+ memory_array = ['eli','eli','erumai','erumai','kaalai','kaalai','kuthirai','kuthirai','muyal','muyal','naai','naai','ottagam','ottagam','panri','panri','pasu','pasu','poonai','poonai','semmariyadu','semmariyadu','velladu','velladu'];
+ }
+else if(stage==5)
+{
+jcount = 4;
+ memory_array = ['duck','duck','eagle','eagle','kaka','kaka','kili','kili','kingfisher','kingfisher','kokku','kokku','marangkothi','marangkothi','mayil','mayil','myna','myna','naarai','naarai','ostrich','ostrich','owl','owl','parunthu','parunthu','pura','pura'];
+}
+else if(stage==6 )
+{
+jcount = 4;
+ memory_array = ['circle','circle','diamond','diamond','heart','heart','oval','oval','rectangle','rectangle','square','square','star','star','triangle','triangle'];
+}
+else if(stage==7 )
+{
+jcount = 4;
+ memory_array = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9','10','10'];
+}
+else if(stage==8 )
+{
+jcount = 4;
+ memory_array = ['10','10','20','20','30','30','40','40','50','50','60','60','70','70','80','80','90','90','100','100'];
+}
+else if(stage==9)
+{
+jcount = 4;
+ memory_array = ['apple','apple','banana','banana','coconut','coconut','dates','dates','fig','fig','grapes','grapes','guava','guava','jackfruit','jackfruit','lemon','lemon','mango','mango','orange','orange','papaya','papaya','pears','pears','pineapple','pineapple'];
+}
+else if(stage==10)
+{
+jcount = 4;
+ memory_array = ['avarai','avarai','beans','beans','beetroot','beetroot','brinjal','brinjal','cabbage','cabbage','capsicum','capsicum','carrot','carrot','cauli','cauli','chilli','chilli','coriander','coriander'];
+}
+else if(stage==11)
+{
+jcount = 4;
+ memory_array = ['corn','corn','cucumber','cucumber','keerai','keerai','tomato','tomato','oakra','oakra','onion','onion','pavakkai','pavakkai','poosani','poosani','potato','potato','radish','radish'];
+}
+else
+ memory_array = ['a','a','aa','aa','lete','lete','ee','ee','u','u','uu','uu'];
+    memory_array.memory_tile_shuffle();
+	
+var icount = memory_array.length;	
+	for(var i = 0; i < icount; i++){
+		output += '<div class="row">';
+		for (var j=0; j < jcount;j++,i++)
+		{
+if(jcount==4)
+{
+	output += '<div class="col-xs-3 col-md-3"><div data-val="' + memory_array[i] + '" class="tile_div" id="tile_'+i+'" ><img src="../img/qmark.png" data-val="?" align="center"  class="img-responsive"  /></div></div>';
+}
+else if(jcount == 6)
+{
+output += '<div class="col-xs-2 col-md-2"><div data-val="' + memory_array[i] + '" class="tile_div" id="tile_'+i+'" ><img src="../img/qmark.png" data-val="?" align="center"  class="img-responsive"  /></div></div>';
+}
+else
+{
+		output += '<div class="col-xs-4 col-md-4"><div data-val="' + memory_array[i] + '" class="tile_div" id="tile_'+i+'" ><img src="../img/qmark.png" data-val="?" align="center"  class="img-responsive"  /></div></div>';
+}
+		
+		}
+		output += '</div>';
+		i--;
+	}
+	$('#memory_board').html(output);
+}
+
+
+$.fn.newBoard(1);
+
+ $(document).on("click",".tile_div",function(){
+
+tile = $(this);
+val = $(this).data("val");
+
+
+
+til = $(this).find("img").data("val");
+if((til == "" || til == "?") && memory_values.length < 2){
+
+
+if(stage == 7 || stage == 8)
+{$("#myvoice").get(0).src = "../img/numbers/" + val + ".mp3";
+}else
+$("#myvoice").get(0).src = "../img/" + val + ".mp3";
+
+$(this).removeClass("bg1");
+		$(this).css("background",'#FFF');
+		if(stage == 6)
+		{$(this).html('<img src="../img/' + val + '.png" align="center"  class="img-responsive"  />');
+		}
+		else if(stage == 7 || stage == 8)
+		{$(this).html('<img src="../img/numbers/' + val + '.jpg" align="center"  class="img-responsive"  />'); }
+		else {
+		$(this).html('<img src="../img/' + val + '.jpg" align="center"  class="img-responsive"  />'); }
+$("#myvoice").get(0).play();
+		if(memory_values.length == 0){
+			memory_values.push(val);
+
+			memory_tile_ids.push($(this).prop("id"));
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push($(this).prop("id"));
+			if(memory_values[0] == memory_values[1]){
+				tiles_flipped += 2;
+				// Clear both arrays
+				memory_values = [];
+            	memory_tile_ids = [];	
+				// Check to see if the whole board is cleared
+				if(tiles_flipped == memory_array.length){
+$("#myvoice").get(0).src = "../img/applause.mp3";
+$("#myvoice").get(0).play();
+$("#gamearea").css("backgroundColor","#333");
+
+		showAds();
+$( "#dialog" ).dialog({
+      autoOpen: true,
+	closeText: "hide",
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+	hide: {
+        effect: "explode",
+        duration: 1000
+      },
+	height: 'auto',
+    width: $(window).width() > 600 ? 600 : 'auto', 
+    fluid: true,
+    resizable: false
+    });
+	
+//$("#memory_board").html("");
+					
+					//setTimeout(newBoard, 2000);
+
+					//newBoard();
+				}
+			} else {
+				function flip2Back(){
+				    // Flip the 2 tiles back over
+				
+				  
+			//$("#"+memory_tile_ids[0]).css('background','url(qmark.png) no-repeat');
+				
+				$("#"+memory_tile_ids[0]).html('<img src="../img/qmark.png" data-val="?" align="center"  class="img-responsive"  />');
+
+
+				//$("#"+memory_tile_ids[1]).css('background','url(qmark.png) no-repeat');
+				
+				$("#"+memory_tile_ids[1]).html('<img src="../img/qmark.png" data-val="?" align="center"  class="img-responsive"  />');
+
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+				}
+				setTimeout(flip2Back, 700);
+			}
+		}
+	}
+
+});
+
+
+/* next levels and replay button operations */
+$("#nextnew").click(function(event){
+event.preventDefault();
+$( "#dialog" ).dialog( "close" );
+stage++;
+$.fn.newBoard(stage);
+});
+
+$("#levelsicon").click(function(event){
+event.preventDefault();
+
+$( "#dialog" ).dialog( "close" );
+$("#levels").slideDown("slow");
+$("#gamearea").hide("slow");
+});
+
+$("#replay").click(function(event){
+event.preventDefault();
+$( "#dialog" ).dialog( "close" );
+$.fn.newBoard(stage);
+});
+
+$(window).resize(function() {
+  $("#dialog").dialog("option", "position", "center"); //places the dialog box at the center
+  $("#dialog").dialog({
+    width: $(window).width() > 600 ? 600 : 'auto', //resizes the dialog box as the window is resized
+ });
+});
+
+
+
+});
+</script>
+
+</head>
+<body style="background:url(../img/newbg.jpg) repeat pink;background-size:cover;">
+<div id="levels" style="margin-top:15%;">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=1>
+        <span class="left title">Level 1 - Vowels</span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a class="btn right" data-stage=2 >
+        <span class="left title">Level 2 - Forest Animals</span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div><!-- end of trow -->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=3>
+        <span class="left title">Level 3 - Insects and Water animals</span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 3 -->
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=4>
+        <span class="left title">Level 4 - Domestic Animals</span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div><!-- end of row 4 -->
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=5>
+        <span class="left title">Level 5 - Birds</span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 5-->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=6>
+        <span class="left title">Level 6 - Shapes</span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 6 -->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=7>
+        <span class="left title">Level 7 - Numbers </span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 7 -->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=8>
+        <span class="left title">Level 8 - Numbers</span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 8 -->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=9>
+        <span class="left title">Level 9 - Fruits </span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 9 -->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=10>
+        <span class="left title">Level 10 - Vegetables </span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 10 -->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<a href="#" class="btn right" data-stage=11>
+        <span class="left title">Level 11 - Vegetables </span>
+        <span class="right icon icon-heart"><span class="arrow-right"></span></span>
+      </a>
+</div>
+</div> <!-- end of row 11 -->
+
+
+</div>
+
+</div>
+
+<div id="gamearea">
+<audio id="myvoice" type="audio/ogg"></audio>
+<div class="container-fluid">
+
+		<div id="memory_board">
+		</div>
+
+</div> <!-- end of container -->
+</div>
+
+<div id="dialog" title="LEVEL COMPLETED" >
+<p>
+<a href="#" id="levelsicon" style="float:left;"><img src="../img/lvl.png" class="img-responsive"  />
+Levels
+</a> <a href="#" id="replay"><img src="../img/replay.png" class="img-responsive"  />
+Replay</a>  <a href="#" id="nextnew" style="text-align:center;"><img src="../img/next.png" class="img-responsive"  />
+Next
+</a>  
+</p>
+</div> <!-- end of dialog -->
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/admob_simple.js"></script>
+</body>
+</html>

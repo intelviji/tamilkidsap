@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Site Title -->
+    <title></title>				
+
+	<!-- Stylesheet--> 
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+<style type="text/css">
+.container-fluid
+{
+margin-top:14%;
+}
+.colclass
+{
+padding:5px;
+text-align:center;
+}
+.colclass a{
+color:white;
+font-weight:bold;
+text-align:center;
+cursor:move;
+}
+#goback
+{
+padding:15px;
+background:black;
+color:white;
+font-weight:bold;
+}
+.row{
+margin:3px;
+}
+</style>
+</head>
+<body style="background:purple;">
+<audio id="myvoice" preload="none"></audio>
+<div class="container-fluid" id="menus">
+	<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="ka" ><img src="../img/letters/ka.jpg" alt="ka" class="img-responsive" /> <br />
+			க வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="nga" ><img src="../img/letters/nga.jpg" alt="nga" class="img-responsive" /> <br />
+			ங வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="cha" ><img src="../img/letters/cha.jpg" alt="cha" class="img-responsive" /> <br />
+			ச வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="ngya" ><img src="../img/letters/ngya.jpg" alt="cha" class="img-responsive" /> <br />
+			ஞ வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="da" ><img src="../img/letters/da.jpg" alt="cha" class="img-responsive" /> <br />
+			ட வரிசை  
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="naa" ><img src="../img/letters/naa.jpg" alt="cha" class="img-responsive" /> <br />
+			ண வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="tha" ><img src="../img/letters/tha.jpg" alt="cha" class="img-responsive" /> <br />
+			த வரிசை  
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="na1" ><img src="../img/letters/na1.jpg" alt="cha" class="img-responsive" /> <br />
+			ந வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="pa" ><img src="../img/letters/pa.jpg" alt="cha" class="img-responsive" /> <br />
+			ப வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="ma" ><img src="../img/letters/ma.jpg" alt="cha" class="img-responsive" /> <br />
+			ம  வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="ya" ><img src="../img/letters/ya.jpg" alt="cha" class="img-responsive" /> <br />
+			ய வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="ra" ><img src="../img/letters/ra.jpg" alt="cha" class="img-responsive" /> <br />
+			ர வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="la" ><img src="../img/letters/la.jpg" alt="cha" class="img-responsive" /> <br />
+			ல  வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="va" ><img src="../img/letters/va.jpg" alt="cha" class="img-responsive" /> <br />
+			வ வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="LLA" ><img src="../img/letters/LLA.jpg" alt="cha" class="img-responsive" /> <br />
+			ழ  வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="llla" ><img src="../img/letters/llla.jpg" alt="cha" class="img-responsive" /> <br />
+			ள வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="tra" ><img src="../img/letters/tra.jpg" alt="cha" class="img-responsive" /> <br />
+			ற  வரிசை 
+			</a>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 colclass">
+			<a class="menua" id="nna" ><img src="../img/letters/nna.jpg" alt="cha" class="img-responsive" /> <br />
+			ன வரிசை 
+			</a>
+		</div>
+		
+	</div>
+</div>
+<div id="learnarea">
+</div>
+
+	<!-- SCRIPTS -->
+    <script src="../js/jquery.min.js"></script>
+    
+
+
+	<script>
+$(document).ready(function(){
+var loc="";
+window.localStorage.setItem("page", "any");
+$(".menua").click(function(){
+var aid = $(this).attr("id");
+var memory_array = [];
+var jcount=3;
+var loc="../img/letters/";
+$("#menus").hide();
+prepareAds();
+switch(aid)
+{
+	case "ka":
+		memory_array = ['ka','kaa','ki','kee','ku','kuu','kei','keei','kai','koo-o','kooooo','kow'];
+		break;
+	case "nga":
+		memory_array = ['nga','ngaa','ngi2','ngii2','ngu','nguu','ngaai','ngei','ngeei','ngooo','ngoooii','ngow'];
+		break;
+	case "cha":
+		memory_array = ['cha','chaa','chi','chii','chu','chooo','che','cheei','chai','cho','choooi','chow'];
+		break;
+	case "ngya":
+		memory_array = ['ngya','ngyaa','ngi','ngii','zgu','zguuu','zge','zgeei','zgaai','zgoo','zgooooo','zgow'];
+		break;
+	case "da":
+		memory_array = ['da','daa','de','dee','du','duuu','dei','deei','daai','do','doo','dow'];
+		break;
+	case "naa":
+		memory_array = ['naa','naaa','ni','niii','nu','nuuu','ne','neeei','nai','no','noo','now'];
+		break;
+	case "tha":
+		memory_array = ['tha','thaa','thi','thee','thu','thoo','thea','theei','thai','tho','thoe','thow'];
+		break;
+	case "na1":
+		memory_array = ['na1','naa2','ni2','nii2','nu2','noo2','ne2','nee2','nai2','no2','no3','now2'];
+		break;
+	case "pa":
+		memory_array = ['pa','paa','pi','pee','pu','poo','pea','peai','pai','po2','pooo2','pow'];
+		break;
+	case "ma":
+		memory_array = ['ma','maa','mi','mee','mu','moo','may','maai','mai','mo2','moo2','mow'];
+		break;
+	case "ya":
+		memory_array = ['ya','yaa','ye','yee','yu','yuu','yea','yeai','yai','yo','yoo','yow'];
+		break;
+	case "ra":
+		memory_array = ['ra','raa','ri','rii','ru','roo','rei','reai','rai','ro','rooo','row'];
+		break;
+	case "la":
+		memory_array = ['la','laa','li','lee','lu','loo','lea','leaa','lai','low','loww','love'];
+		break;
+	case "va":
+		memory_array = ['va','vaa','vi','vii','vu','voo','vea','veeaa','vai','vo','vooo','vow'];
+		break;	
+	case "LLA":
+		memory_array = ['LLA','LLAAA','LLI','LLEE','LOO2','LOOO','LLEA','LEAAI','LLAI','LLOW','LLOOW','LLOOVE'];
+		break;	
+	case "llla":
+		memory_array = ['llla','lllaaa','llli','lllee','lllu','llloo','lllea','llleaa','lllai','lllow','llloow','lllove'];
+		break;
+	case "tra":
+		memory_array = ['tra','traa','tri','ttrree','tru','troo','trea','treaa','ttrrai','trroo','trrooo','trow'];
+		break;
+	case "nna":
+		memory_array = ['nna','nnaa','nni','nnee','nnu','nnoo','nnea','nneaa','nnai','nnow','nnooww','nnoove'];
+		break;		
+		
+}
+var output = '<div class="container-fluid">';
+output += '<div class="row" style="padding:2%;"> <div class="col-xs-12 col-sm-12 col-md-12"> <a id="goback" > Go Back  </a> </div>  </div>';
+var icount = memory_array.length;	
+	for(var i = 0; i < icount; i++)
+	{
+		output += '<div class="row">';
+		for (var j=0; j < jcount;j++,i++)
+		{
+			output += '<div class="col-xs-4 col-sm-4 col-md-4 colclass"><img  src="' + loc + memory_array[i] + '.jpg" data-val="' + loc + memory_array[i] +'" align="center"  class="img-responsive learnimg"  /></div>';
+		}
+		i--;
+		output += '</div>';
+	}
+	output += '</div>';
+	$('#learnarea').html(output);
+	$('#learnarea').show();
+});
+
+ $(document).on("click",".learnimg",function(){
+ var v = $(this).data("val");
+ $("#myvoice").get(0).src= v + ".mp3";
+	$("#myvoice").get(0).play();
+	switch(v)
+	{
+		case "../img/letters/kow":
+			
+			showAds();
+			break;
+		case "../img/letters/ngow":
+		
+			showAds();
+			break;
+		case "../img/letters/chow":
+		
+			showAds();
+			break;
+		case "../img/letters/zgow":
+			
+			showAds();
+			break;
+		case "../img/letters/dow":
+		
+			showAds();
+			break;
+		case "../img/letters/now":
+		
+			showAds();
+			break;
+		case "../img/letters/thow":
+		
+			showAds();
+			break;
+		case "../img/letters/now2":
+			
+			showAds();
+			break;
+		case "../img/letters/pow":
+			
+			showAds();
+			break;
+		case "../img/letters/mow":
+		
+			showAds();
+			break;
+		case "../img/letters/yow":
+			
+			showAds();
+			break;
+		case "../img/letters/row":
+		
+			showAds();
+			break;
+		case "../img/letters/love":
+		
+			showAds();
+			break;
+			case "../img/letters/vow":
+		
+			showAds();
+			break;
+			case "../img/letters/trow":
+	
+			showAds();
+			break;
+			case "../img/letters/LLOOVE":
+		
+			showAds();
+			break;
+			case "../img/letters/lllove":
+		
+			showAds();
+			break;
+			case "../img/letters/nnoove":
+	
+			showAds();
+			break;
+			
+	}
+ });
+ 
+ $(document).on("click","#goback",function(){
+ $("#learnarea").hide();
+ $("#menus").show("slow");
+ 
+		
+		showAds();
+	
+ });
+ 
+});
+	</script>
+	<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/admob_simple.js"></script>
+</body>
+</html>

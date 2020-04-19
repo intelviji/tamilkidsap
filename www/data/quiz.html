@@ -1,0 +1,551 @@
+<html>
+<head>
+
+  <title>Tamil Quiz</title>
+ <meta charset="UTF-8">
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"> 
+<script src="../js/jquery.min.js"></script>
+<style type="text/css">
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:8px solid green;
+}
+a
+{
+cursor:pointer;
+}
+.centered
+{
+position: absolute;
+    top: 49%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+.centered a
+{
+	color:#7e532e;
+	font-family:Arial Black;
+	font-size:24px;
+padding-bottom:5px;
+ text-shadow:2px 2px 5px #7e532e;
+}
+.btnimg
+{
+	width:100%;
+}
+</style>
+<script>
+$(document).ready(function(){
+var loop_index = 0;
+window.localStorage.setItem("page", "any");
+var quiz;
+$("#quiz-content").hide();
+$("#level1").click(function(){
+loop_index = 0;
+$("#menus").hide();
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+$("#quiz-content").show();
+quiz = [{ question : "quiz_a.mp3",option1 : "a.jpg", option2: "aa.jpg", option3 : "o.png", option4 : "lete.jpg", answer : "a.jpg"},
+{question : "quiz_aa.mp3",option1 : "a.jpg", option2: "aa.jpg", option3 : "ag.png", option4 : "oo.png", answer : "aa.jpg"},
+{question : "quiz_o.mp3",option1 : "a.jpg", option2: "o.png", option3 : "ag.png", option4 : "oo.png", answer : "o.png"},
+{question : "quiz_oo.mp3",option1 : "aa.jpg", option2: "o.png", option3 : "ee.jpg", option4 : "oo.png", answer : "oo.png"},
+{question : "quiz_e.mp3",option1 : "lete.jpg", option2: "aa.jpg", option3 : "av.png", option4 : "oo.png", answer : "lete.jpg"},
+{question : "quiz_ee.mp3",option1 : "ai.png", option2: "u.jpg", option3 : "o.png", option4 : "ee.jpg", answer : "ee.jpg"},
+{question : "quiz_u.mp3",option1 : "a.jpg", option2: "u.jpg", option3 : "ag.png", option4 : "ai.png", answer : "u.jpg"},
+{question : "quiz_uu.mp3",option1 : "uu.jpg", option2: "ye.jpg", option3 : "ag.png", option4 : "oo.png", answer : "uu.jpg"},
+{question : "quiz_ye.mp3",option1 : "ye.jpg", option2: "yea.jpg", option3 : "ag.png", option4 : "oo.png", answer : "ye.jpg"},
+{question : "quiz_yea.mp3",option1 : "ag.png", option2: "u.jpg", option3 : "yea.jpg", option4 : "uu.jpg", answer : "yea.jpg"},
+{question : "quiz_ai.mp3",option1 : "av.png", option2: "ye.jpg", option3 : "ai.png", option4 : "a.jpg", answer : "ai.png"},
+{question : "quiz_av.mp3",option1 : "ai.png", option2: "lete.jpg", option3 : "o.png", option4 : "av.png", answer : "av.png"},
+{question : "quiz_ag.mp3",option1 : "ag.png", option2: "aa.jpg", option3 : "yea.jpg", option4 : "uu.jpg", answer : "ag.png"}];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level2").click(function(){
+loop_index = 0;
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "circle.mp3",option1 : "circle.png", option2: "square.png", option3 : "oval.png", option4 : "rectangle.png", answer : "circle.png"},
+{question : "oval.mp3",option1 : "circle.png", option2: "oval.png", option3 : "square.png", option4 : "rectangle.png", answer : "oval.png"},
+{question : "rectangle.mp3",option1 : "star.png", option2: "oval.png", option3 : "rectangle.png", option4 : "square.png", answer : "rectangle.png"},
+{question : "square.mp3",option1 : "diamond.png", option2: "star.png", option3 : "rectangle.png", option4 : "square.png", answer : "square.png"},
+{question : "star.mp3",option1 : "circle.png", option2: "oval.png", option3 : "star.png", option4 : "heart.png", answer : "star.png"},
+{question : "diamond.mp3",option1 : "heart.png", option2: "diamond.png", option3 : "oval.png", option4 : "triangle.png", answer : "diamond.png"},
+{question : "triangle.mp3",option1 : "square.png", option2: "oval.png", option3 : "triangle.png", option4 : "heart.png", answer : "triangle.png"},
+{question : "heart.mp3",option1 : "circle.png", option2: "star.png", option3 : "heart.png", option4 : "diamond.png", answer : "heart.png"}];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level3").click(function(){
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+loop_index = 0;
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "rhino.mp3",option1 : "rhino.jpg", option2: "singam.jpg", option3 : "onaai.jpg", option4 : "paambu.jpg", answer : "rhino.jpg"},
+{question : "singam.mp3",option1 : "nathai.jpg", option2: "puli.jpg", option3 : "singam.jpg", option4 : "nari.jpg", answer : "singam.jpg"},
+{question : "siruthai.mp3",option1 : "puli.jpg", option2: "rhino.jpg", option3 : "singam.jpg", option4 : "siruthai.jpg", answer : "siruthai.jpg"},
+{question : "yaanai.mp3",option1 : "yaanai.jpg", option2: "paambu.jpg", option3 : "karadi.jpg", option4 : "maan.jpg", answer : "yaanai.jpg"},
+{question : "zebra.mp3",option1 : "maan.jpg", option2: "singam.jpg", option3 : "yaanai.jpg", option4 : "zebra.jpg", answer : "zebra.jpg"},
+{question : "puli.mp3",option1 : "nari.jpg", option2: "singam.jpg", option3 : "karadi.jpg", option4 : "puli.jpg", answer : "puli.jpg"},
+{question : "paambu.mp3",option1 : "chivingi.jpg", option2: "puli.jpg", option3 : "paambu.jpg", option4 : "karadi.jpg", answer : "paambu.jpg"},
+{question : "onaai.mp3",option1 : "aamai.jpg", option2: "nari.jpg", option3 : "onaai.jpg", option4 : "karadi.jpg", answer : "onaai.jpg"},
+{question : "aamai.mp3",option1 : "aamai.jpg", option2: "rhino.jpg", option3 : "singam.jpg", option4 : "nari.jpg", answer : "aamai.jpg"},
+{question : "chivingi.mp3",option1 : "maan.jpg", option2: "chivingi.jpg", option3 : "nathai.jpg", option4 : "siruthai.jpg", answer : "chivingi.jpg"},
+{question : "frog.mp3",option1 : "frog.jpg", option2: "paambu.jpg", option3 : "gorilla.jpg", option4 : "nathai.jpg", answer : "frog.jpg"},
+{question : "gorilla.mp3",option1 : "zebra.jpg", option2: "rhino.jpg", option3 : "gorilla.jpg", option4 : "paambu.jpg", answer : "gorilla.jpg"},
+{question : "kangaroo.mp3",option1 : "muthalai.jpg", option2: "rhino.jpg", option3 : "kangaroo.jpg", option4 : "nathai.jpg", answer : "kangaroo.jpg"},
+{question : "karadi.mp3",option1 : "kangaroo.jpg", option2: "rhino.jpg", option3 : "karadi.jpg", option4 : "kurangu.jpg", answer : "karadi.jpg"},
+{question : "kurangu.mp3",option1 : "kurangu.jpg", option2: "rhino.jpg", option3 : "maan.jpg", option4 : "zebra.jpg", answer : "kurangu.jpg"},
+{question : "maan.mp3",option1 : "nari.jpg", option2: "rhino.jpg", option3 : "singam.jpg", option4 : "maan.jpg", answer : "maan.jpg"},
+{question : "muthalai.mp3",option1 : "muthalai.jpg", option2: "rhino.jpg", option3 : "onaai.jpg", option4 : "kurangu.jpg", answer : "muthalai.jpg"},
+{question : "nari.mp3",option1 : "nari.jpg", option2: "rhino.jpg", option3 : "nathai.jpg", option4 : "puli.jpg", answer : "nari.jpg"},
+{question : "nathai.mp3",option1 : "kurangu.jpg", option2: "rhino.jpg", option3 : "maan.jpg", option4 : "nathai.jpg", answer : "nathai.jpg"}
+];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level4").click(function(){
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+loop_index = 0;
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "butterfly.mp3",option1 : "butterfly.jpg", option2: "thel.jpg", option3 : "e.jpg", option4 : "cricketpoochi.jpg", answer : "butterfly.jpg"},
+{question : "cricketpoochi.mp3",option1 : "e.jpg", option2: "vandu.jpg", option3 : "cricketpoochi.jpg", option4 : "erumbu.jpg", answer : "cricketpoochi.jpg"},
+{question : "thumbi.mp3",option1 : "puli.jpg", option2: "rhino.jpg", option3 : "dragonfly.jpg", option4 : "siruthai.jpg", answer : "dragonfly.jpg"},
+{question : "e.mp3",option1 : "yaanai.jpg", option2: "paambu.jpg", option3 : "karadi.jpg", option4 : "maan.jpg", answer : "yaanai.jpg"},
+{question : "erumbu.mp3",option1 : "maan.jpg", option2: "singam.jpg", option3 : "yaanai.jpg", option4 : "zebra.jpg", answer : "zebra.jpg"},
+{question : "karappan.mp3",option1 : "nari.jpg", option2: "singam.jpg", option3 : "karadi.jpg", option4 : "puli.jpg", answer : "puli.jpg"},
+{question : "thel.mp3",option1 : "chivingi.jpg", option2: "puli.jpg", option3 : "paambu.jpg", option4 : "karadi.jpg", answer : "paambu.jpg"},
+{question : "vandu.mp3",option1 : "aamai.jpg", option2: "nari.jpg", option3 : "onaai.jpg", option4 : "karadi.jpg", answer : "onaai.jpg"},
+{question : "vettukili.mp3",option1 : "aamai.jpg", option2: "rhino.jpg", option3 : "singam.jpg", option4 : "nari.jpg", answer : "aamai.jpg"}
+
+];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level5").click(function(){
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+loop_index = 0;
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "eli.mp3",option1 : "e.jpg", option2: "erumbu.jpg", option3 : "eli.jpg", option4 : "kaalai.jpg", answer : "eli.jpg"},
+{question : "erumai.mp3",option1 : "nathai.jpg", option2: "puli.jpg", option3 : "singam.jpg", option4 : "kuthirai.jpg", answer : "erumai.jpg"},
+{question : "kaalai.mp3",option1 : "puli.jpg", option2: "rhino.jpg", option3 : "singam.jpg", option4 : "siruthai.jpg", answer : "kaalai.jpg"},
+{question : "pasu.mp3",option1 : "erumbu.jpg", option2: "panri.jpg", option3 : "kuthirai.jpg", option4 : "pasu.jpg", answer : "pasu.jpg"},
+{question : "poonai.mp3",option1 : "panri.jpg", option2: "kuthirai.jpg", option3 : "naai.jpg", option4 : "poonai.jpg", answer : "poonai.jpg"},
+{question : "semmariyadu.mp3",option1 : "naai.jpg", option2: "velladu.jpg", option3 : "semmariyadu.jpg", option4 : "puli.jpg", answer : "semmariyadu.jpg"},
+{question : "velladu.mp3",option1 : "velladu.jpg", option2: "muyal.jpg", option3 : "pasu.jpg", option4 : "panri.jpg", answer : "velladu.jpg"},
+{question : "ottagam.mp3",option1 : "aamai.jpg", option2: "ottagam.jpg", option3 : ".jpg", option4 : "karadi.jpg", answer : "ottagam.jpg"},
+{question : "naai.mp3",option1 : "aamai.jpg", option2: "rhino.jpg", option3 : "naai.jpg", option4 : "karappan.jpg", answer : "naai.jpg"},
+{question : "panri.mp3",option1 : "maan.jpg", option2: "panri.jpg", option3 : "nathai.jpg", option4 : "siruthai.jpg", answer : "panri.jpg"},
+{question : "muyal.mp3",option1 : "frog.jpg", option2: "muyal.jpg", option3 : "gorilla.jpg", option4 : "kuthirai.jpg", answer : "muyal.jpg"},
+{question : "kuthirai.mp3",option1 : "pasu.jpg", option2: "eli.jpg", option3 : "e.jpg", option4 : "kuthirai.jpg", answer : "kuthirai.jpg"}
+];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level6").click(function(){
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+loop_index = 0;
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "dolphin.mp3",option1 : "jellymeen.jpg", option2: "kadarkuthirai.jpg", option3 : "nandu.jpg", option4 : "dolphin.jpg", answer : "dolphin.jpg"},
+{question : "iraalmeen.mp3",option1 : "jellymeen.jpg", option2: "nandu.jpg", option3 : "iraalmeen.jpg", option4 : "kadarkuthirai.jpg", answer : "iraalmeen.jpg"},
+{question : "jellymeen.mp3",option1 : "vilaangu.jpg", option2: "jellymeen.jpg", option3 : "nandu.jpg", option4 : "kadarkuthirai.jpg", answer : "jellymeen.jpg"},
+{question : "kadarkuthirai.mp3",option1 : "kadarkuthirai.jpg", option2: "vilaangu.jpg", option3 : "kuthirai.jpg", option4 : "pasu.jpg", answer : "kadarkuthirai.jpg"},
+{question : "nandu.mp3",option1 : "iraalmeen.jpg", option2: "nandu.jpg", option3 : "sura.jpg", option4 : "thimingalam.jpg", answer : "nandu.jpg"},
+{question : "octopus.mp3",option1 : "thimingalam.jpg", option2: "naai.jpg", option3 : "semmariyadu.jpg", option4 : "octopus.jpg", answer : "octopus.jpg"},
+{question : "singameen.mp3",option1 : "singameen.jpg", option2: "muyal.jpg", option3 : "pasu.jpg", option4 : "panri.jpg", answer : "singameen.jpg"},
+{question : "sura.mp3",option1 : "sura.jpg", option2: "jellymeen.jpg", option3 : "vilaangu.jpg", option4 : "octopus.jpg", answer : "sura.jpg"},
+
+{question : "thimingalam.mp3",option1 : "singameen.jpg", option2: "thimingalam.jpg", option3 : "jellymeen.jpg", option4 : "siruthai.jpg", answer : "thimingalam.jpg"},
+{question : "vilaangu.mp3",option1 : "frog.jpg", option2: "singameen.jpg", option3 : "jellymeen.jpg", option4 : "vilaangu.jpg", answer : "vilaangu.jpg"}
+];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level7").click(function(){
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+loop_index = 0;
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "duck.mp3",option1 : "eagle.jpg", option2: "vulture.jpg", option3 : "duck.jpg", option4 : "pura.jpg", answer : "duck.jpg"},
+{question : "eagle.mp3",option1 : "nathai.jpg", option2: "eagle.jpg", option3 : "kili.jpg", option4 : "parunthu.jpg", answer : "eagle.jpg"},
+{question : "kaka.mp3",option1 : "kili.jpg", option2: "kaka.jpg", option3 : "kingfisher.jpg", option4 : "kokku.jpg", answer : "kaka.jpg"},
+{question : "kili.mp3",option1 : "kili.jpg", option2: "ostrich.jpg", option3 : "parunthu.jpg", option4 : "owl.jpg", answer : "kili.jpg"},
+{question : "kingfisher.mp3",option1 : "kingfisher.jpg", option2: "owl.jpg", option3 : "pura.jpg", option4 : "naarai.jpg", answer : "kingfisher.jpg"},
+{question : "kokku.mp3",option1 : "kingfisher.jpg", option2: "kokku.jpg", option3 : "myna.jpg", option4 : "mayil.jpg", answer : "kokku.jpg"},
+{question : "marangkothi.mp3",option1 : "marangkothi.jpg", option2: "mayil.jpg", option3 : "ostrich.jpg", option4 : "myna.jpg", answer : "marangkothi.jpg"},
+{question : "mayil.mp3",option1 : "sembagam.jpg", option2: "owl.jpg", option3 : "myna.jpg", option4 : "mayil.jpg", answer : "mayil.jpg"},
+{question : "myna.mp3",option1 : "myna.jpg", option2: "parunthu.jpg", option3 : "kili.jpg", option4 : "naarai.jpg", answer : "myna.jpg"},
+{question : "naarai.mp3",option1 : "kingfisher.jpg", option2: "naarai.jpg", option3 : "swan.jpg", option4 : "vulture.jpg", answer : "naarai.jpg"},
+{question : "ostrich.mp3",option1 : "vulture.jpg", option2: "swan.jpg", option3 : "ostrich.jpg", option4 : "parunthu.jpg", answer : "ostrich.jpg"},
+{question : "owl.mp3",option1 : "owl.jpg", option2: "swan.jpg", option3 : "sembagam.jpg", option4 : "kaka.jpg", answer : "owl.jpg"},
+{question : "parunthu.mp3",option1 : "sparrow.jpg", option2: "vulture.jpg", option3 : "kokku.jpg", option4 : "parunthu.jpg", answer : "parunthu.jpg"},
+{question : "pura.mp3",option1 : "pura.jpg", option2: "kili.jpg", option3 : "myna.jpg", option4 : "naarai.jpg", answer : "pura.jpg"},
+{question : "sembagam.mp3",option1 : "kingfisher.jpg", option2: "marangkothi.jpg", option3 : "eagle.jpg", option4 : "duck.jpg", answer : "sembagam.jpg"},
+{question : "sparrow.mp3",option1 : "duck.jpg", option2: "marangkothi.jpg", option3 : "sparrow.jpg", option4 : "sembagam.jpg", answer : "sparrow.jpg"},
+{question : "swan.mp3",option1 : "swan.jpg", option2: "parunthu.jpg", option3 : "vulture.jpg", option4 : "duck.jpg", answer : "swan.jpg"},
+{question : "vulture.mp3",option1 : "kokku.jpg", option2: "ostrich.jpg", option3 : "vulture.jpg", option4 : "sembagam.jpg", answer : "vulture.jpg"}
+];
+
+$.fn.newQuiz(loop_index);
+});
+
+$("#level8").click(function(){
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+loop_index = 0;
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "apple.mp3",option1 : "guava.jpg", option2: "banana.jpg", option3 : "apple.jpg", option4 : "fig.jpg", answer : "apple.jpg"},
+{question : "banana.mp3",option1 : "dates.jpg", option2: "banana.jpg", option3 : "fig.jpg", option4 : "jackfruit.jpg", answer : "banana.jpg"},
+{question : "coconut.mp3",option1 : "coconut.jpg", option2: "grapes.jpg", option3 : "guava.jpg", option4 : "lemon.jpg", answer : "coconut.jpg"},
+{question : "dates.mp3",option1 : "mango.jpg", option2: "dates.jpg", option3 : "fig.jpg", option4 : "papaya.jpg", answer : "dates.jpg"},
+{question : "fig.mp3",option1 : "pears.jpg", option2: "fig.jpg", option3 : "pineapple.jpg", option4 : "pomegranate.jpg", answer : "fig.jpg"},
+{question : "grapes.mp3",option1 : "watermelon.jpg", option2: "apple.jpg", option3 : "grapes.jpg", option4 : "banana.jpg", answer : "grapes.jpg"},
+{question : "guava.mp3",option1 : "guava.jpg", option2: "coconut.jpg", option3 : "dates.jpg", option4 : "fig.jpg", answer : "guava.jpg"},
+{question : "jackfruit.mp3",option1 : "jackfruit.jpg", option2: "lemon.jpg", option3 : "mango.jpg", option4 : "orange.jpg", answer : "jackfruit.jpg"},
+{question : "lemon.mp3",option1 : "papaya.jpg", option2: "lemon.jpg", option3 : "pears.jpg", option4 : "pomegranate.jpg", answer : "myna.jpg"},
+{question : "mango.mp3",option1 : "pineapple.jpg", option2: "watermelon.jpg", option3 : "mango.jpg", option4 : "apple.jpg", answer : "naarai.jpg"},
+{question : "orange.mp3",option1 : "apple.jpg", option2: "banana.jpg", option3 : "orange.jpg", option4 : "coconut.jpg", answer : "ostrich.jpg"},
+{question : "papaya.mp3",option1 : "dates.jpg", option2: "fig.jpg", option3 : "grapes.jpg", option4 : "papaya.jpg", answer : "owl.jpg"},
+{question : "pears.mp3",option1 : "pears.jpg", option2: "pineapple.jpg", option3 : "pomegranate.jpg", option4 : "watermelon.jpg", answer : "parunthu.jpg"},
+{question : "pineapple.mp3",option1 : "apple.jpg", option2: "coconut.jpg", option3 : "banana.jpg", option4 : "pineapple.jpg", answer : "pineapple.jpg"},
+{question : "pomegranate.mp3",option1 : "fig.jpg", option2: "grapes.jpg", option3 : "guava.jpg", option4 : "pomegranate.jpg", answer : "pomegranate.jpg"},
+{question : "watermelon.mp3",option1 : "pineapple.jpg", option2: "jackfruit.jpg", option3 : "watermelon.jpg", option4 : "banana.jpg", answer : "watermelon.jpg"}
+];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level9").click(function(){
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+loop_index = 0;
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "avarai.mp3",option1 : "capsicum.jpg", option2: "avarai.jpg", option3 : "beans.jpg", option4 : "beetroot.jpg", answer : "avarai.jpg"},
+{question : "beans.mp3",option1 : "brinjal.jpg", option2: "cabbage.jpg", option3 : "beans.jpg", option4 : "capsicum.jpg", answer : "beans.jpg"},
+{question : "beetroot.mp3",option1 : "beetroot.jpg", option2: "carrot.jpg", option3 : "cauli.jpg", option4 : "chilli.jpg", answer : "beetroot.jpg"},
+{question : "brinjal.mp3",option1 : "coriander.jpg", option2: "brinjal.jpg", option3 : "corn.jpg", option4 : "cucumber.jpg", answer : "brinjal.jpg"},
+{question : "cabbage.mp3",option1 : "cabbage.jpg", option2: "keerai.jpg", option3 : "lettuce.jpg", option4 : "oakra.jpg", answer : "cabbage.jpg"},
+{question : "capsicum.mp3",option1 : "capsicum.jpg", option2: "pavakkai.jpg", option3 : "onion.jpg", option4 : "poosani.jpg", answer : "capsicum.jpg"},
+{question : "carrot.mp3",option1 : "potato.jpg", option2: "radish.jpg", option3 : "carrot.jpg", option4 : "tomato.jpg", answer : "carrot.jpg"},
+{question : "cauli.mp3",option1 : "turnip.jpg", option2: "valai.jpg", option3 : "cauli.jpg", option4 : "avarai.jpg", answer : "cauli.jpg"},
+{question : "chilli.mp3",option1 : "beans.jpg", option2: "beetroot.jpg", option3 : "chilli.jpg", option4 : "brinjal.jpg", answer : "chilli.jpg"},
+{question : "coriander.mp3",option1 : "coriander.jpg", option2: "cabbage.jpg", option3 : "capsicum.jpg", option4 : "carrot.jpg", answer : "coriander.jpg"},
+{question : "corn.mp3",option1 : "cauli.jpg", option2: "coriander.jpg", option3 : "corn.jpg", option4 : "cucumber.jpg", answer : "corn.jpg"},
+{question : "cucumber.mp3",option1 : "cucumber.jpg", option2: "keerai.jpg", option3 : "lettuce.jpg", option4 : "oakra.jpg", answer : "cucumber.jpg"},
+{question : "keerai.mp3",option1 : "onion.jpg", option2: "pavakkai.jpg", option3 : "poonai.jpg", option4 : "keerai.jpg", answer : "keerai.jpg"},
+{question : "lettuce.mp3",option1 : "lettuce.jpg", option2: "oakra.jpg", option3 : "onion.jpg", option4 : "pavakkai.jpg", answer : "lettuce.jpg"},
+{question : "oakra.mp3",option1 : "poosani.jpg", option2: "potato.jpg", option3 : "oakra.jpg", option4 : "radish.jpg", answer : "oakra.jpg"},
+{question : "onion.mp3",option1 : "tomato.jpg", option2: "turnip.jpg", option3 : "valai.jpg", option4 : "onion.jpg", answer : "onion.jpg"},
+{question : "pavakkai.mp3",option1 : "avarai.jpg", option2: "beans.jpg", option3 : "beetroot.jpg", option4 : "pavakkai.jpg", answer : "pavakkai.jpg"},
+{question : "poosani.mp3",option1 : "poosani.jpg", option2: "beans.jpg", option3 : "brinjal.jpg", option4 : "cabbage.jpg", answer : "poosani.jpg"},
+{question : "potato.mp3",option1 : "capsicum.jpg", option2: "carrot.jpg", option3 : "culi.jpg", option4 : "potato.jpg", answer : "potato.jpg"},
+{question : "radish.mp3",option1 : "radish.jpg", option2: "tomato.jpg", option3 : "turnip.jpg", option4 : "valai.jpg", answer : "radish.jpg"},
+{question : "tomato.mp3",option1 : "avarai.jpg", option2: "beans.jpg", option3 : "beetroot.jpg", option4 : "tomato.jpg", answer : "tomato.jpg"},
+{question : "turnip.mp3",option1 : "keerai.jpg", option2: "cabbage.jpg", option3 : "turnip.jpg", option4 : "brinjal.jpg", answer : "turnip.jpg"},
+{question : "valai.mp3",option1 : "valai.jpg", option2: "cucumber.jpg", option3 : "lettuce.jpg", option4 : "onion.jpg", answer : "valai.jpg"}
+];
+
+$.fn.newQuiz(loop_index);
+});
+$("#level10").click(function(){
+loop_index = 0;
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$("#clap").get(0).pause();
+$("#menus").hide();
+$("#quiz-content").show();
+quiz = [{ question : "cheeks.mp3",option1 : "ears.jpg", option2: "fingers.jpg", option3 : "cheeks.jpg", option4 : "hair.jpg", answer : "cheeks.jpg"},
+{question : "ears.mp3",option1 : "hand.jpg", option2: "kangal.jpg", option3 : "knees.jpg", option4 : "ears.jpg", answer : "ears.jpg"},
+{question : "fingers.mp3",option1 : "fingers.jpg", option2: "legs.jpg", option3 : "lips.jpg", option4 : "mouth.jpg", answer : "fingers.jpg"},
+{question : "hair.mp3",option1 : "nails.jpg", option2: "neck.jpg", option3 : "hair.jpg", option4 : "nose.jpg", answer : "hair.jpg"},
+{question : "hand.mp3",option1 : "hand.jpg", option2: "shoulder.jpg", option3 : "teeth.jpg", option4 : "toes.jpg", answer : "hand.jpg"},
+{question : "head.mp3",option1 : "tongue.jpg", option2: "ears.jpg", option3 : "cheeks.jpg", option4 : "head.jpg", answer : "head.jpg"},
+{question : "kangal.mp3",option1 : "kangal.jpg", option2: "knees.jpg", option3 : "legs.jpg", option4 : "lips.jpg", answer : "kangal.jpg"},
+{question : "knees.mp3",option1 : "mouth.jpg", option2: "nails.jpg", option3 : "neck.jpg", option4 : "knees.jpg", answer : "knees.jpg"},
+{question : "legs.mp3",option1 : "nose.jpg", option2: "legs.jpg", option3 : "tongue.jpg", option4 : "toes.jpg", answer : "legs.jpg"},
+{question : "lips.mp3",option1 : "neck.jpg", option2: "lips.jpg", option3 : "shoulder.jpg", option4 : "teeth.jpg", answer : "lips.jpg"},
+{question : "mouth.mp3",option1 : "mouth.jpg", option2: "cheeks.jpg", option3 : "ears.jpg", option4 : "head.jpg", answer : "mouth.jpg"},
+{question : "nails.mp3",option1 : "fingers.jpg", option2: "hair.jpg", option3 : "nails.jpg", option4 : "hand.jpg", answer : "nails.jpg"},
+{question : "neck.mp3",option1 : "neck.jpg", option2: "head.jpg", option3 : "kangal.jpg", option4 : "knees.jpg", answer : "neck.jpg"},
+{question : "nose.mp3",option1 : "legs.jpg", option2: "lips.jpg", option3 : "mouth.jpg", option4 : "nose.jpg", answer : "nose.jpg"},
+{question : "shoulder.mp3",option1 : "shoulder.jpg", option2: "teeth.jpg", option3 : "toes.jpg", option4 : "tongue.jpg", answer : "shoulder.jpg"},
+{question : "teeth.mp3",option1 : "ears.jpg", option2: "fingers.jpg", option3 : "hair.jpg", option4 : "teeth.jpg", answer : "teeth.jpg"},
+{question : "toes.mp3",option1 : "toes.jpg", option2: "head.jpg", option3 : "kangal.jpg", option4 : "knees.jpg", answer : "toes.jpg"},
+{question : "tongue.mp3",option1 : "tongue.jpg", option2: "lips.jpg", option3 : "legs.jpg", option4 : "neck.jpg", answer : "tongue.jpg"}
+];
+
+$.fn.newQuiz(loop_index);
+});
+
+
+    $(":checked").wrap("<span style='background-color:red'>");
+
+
+
+$("#pass").hide();
+$("#fail").hide();
+$("#nextarea").hide();
+$.fn.newQuiz = function(loop_index){
+
+var output = '<div class="row"><div class="col-xs-12 col-md-12">Question:<audio src="../img/' + quiz[loop_index].question + '" type="audio/ogg" autoplay controls></audio></div></div>';
+    output += '<div class="row"><div class="col-xs-6 col-md-6"><label><input type="radio" name="question" value="' + quiz[loop_index].option1 + '" > <img src="../img/' + quiz[loop_index].option1 + '" class="img-responsive"  /></label></div>';
+    output += '<div class="col-xs-6 col-md-6"><label><input type="radio" name="question" value="' + quiz[loop_index].option2 + '" > <img src="../img/' + quiz[loop_index].option2 + '" class="img-responsive"  /></label></div></div>';
+    output += '<div class="row"><div class="col-xs-6 col-md-6"><label><input type="radio" name="question" value="' + quiz[loop_index].option3 + '" > <img src="../img/' + quiz[loop_index].option3 + '" class="img-responsive" /></label></div>';
+    output += '<div class="col-xs-6 col-md-6"><label><input type="radio" name="question" value="' + quiz[loop_index].option4 + '" > <img src="../img/' + quiz[loop_index].option4 + '" class="img-responsive"  /></label></div></div>';
+    
+    $("#quizarea").html(output);
+}
+$(document).on("click","input[name='question']",function(){
+
+var selval = $("input[name='question']:checked").val();
+if(selval == quiz[loop_index].answer)
+{
+	$("#pass").show();
+	$("#fail").hide();
+	$("#nextarea").show();
+	$("#nono").get(0).pause();
+	$("#clap").get(0).play();
+}
+else
+{
+	$("#fail").show();
+	$("#pass").hide();
+	$("#clap").get(0).pause();
+	$("#nono").get(0).play();
+}
+});
+
+$("#nextarea").click(function(){
+loop_index++;
+$("#pass").hide();
+$("#nextarea").hide();
+	$("#fail").hide();
+	var count = quiz.length;
+	
+if(loop_index > (count-1))
+{
+	
+		showAds();
+	$("#quizarea").html("<img src='../img/quiz_end.png' class='img-responsive' /> <br /> <a id='endcard'><img src='../img/quiz_end1.png' class='img-responsive' /> </a>");
+}
+else
+$.fn.newQuiz(loop_index);
+
+});
+$(document).on("click","#endcard",function(){
+
+$("#quiz-content").hide();
+$("#menus").show();
+});
+$("#goback").click(function(){
+
+$("#quiz-content").hide();
+$("#menus").show();
+});
+$("#help").click(function(){
+
+var ans  = quiz[loop_index].answer;
+$('input[type="radio"]').each(function(index){
+	var temp = $(this).val();
+	if(temp == ans)
+	{
+	
+	$(this).parent().find("img").css("border","8px solid blue");
+	$("#nextarea").show(500);
+	}	
+	
+});
+});
+
+});
+</script>
+</head>
+<body>
+
+<div class="container" id="menus">
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level1" > Level 1 </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 1st row -->
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level2" > Level 2 </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 2nd row -->
+	
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level3" > Level 3 </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 3rd row -->
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level4" > Level 4 </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 4th row -->
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level5" > Level 5 </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 5th row -->
+	
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level6" > Level 6  </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 6th row -->
+	
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level7" > Level 7 </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 7th row -->
+	
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level8" > Level 8 </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 8th row -->
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level9" > Level 9   </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 9th row -->
+	
+	<div class="row">
+		<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+<div class="col-xs-8 col-md-8 col-lg-6 ">
+<img src="../img/woodbtn.png" class="img-responsive btnimg"  />
+<div class="centered"> <a id="level10" > Level 10   </a> </div>
+</div>
+	<div class="col-xs-2 col-md-2 col-lg-3">
+		</div>
+	</div><!-- end of 10th row -->
+</div> <!-- end of menu container -->	
+	
+
+
+
+</div> <!-- end of container -->
+<div class="container" id="quiz-content">
+<div class="row" > <!-- start of top row menu section -->
+<div class="col-xs-6 col-md-6">
+	 <a id="goback"><img src="../img/prev.png" class="img-responsive" width="70" height="70"  /></a> 
+</div>
+<div class="col-xs-6 col-md-6">
+	<a id="help"><img src="../img/help_icon.png"  align="right" width="60" height="60" /></a>
+</div>
+</div> <!-- end of top row menu section -->
+
+<div class="row" >
+<div class="col-xs-12 col-md-12" id="pass">
+<audio id="clap" type="audio/ogg" src="../img/applause.mp3"></audio>
+<img src="../img/smiley-clap.gif" />
+</div>  <!-- end of col -->
+
+<div class="col-xs-12 col-md-12" id="fail">
+<audio id="nono" type="audio/ogg" src="../img/nono.mp3"></audio>
+<img src="../img/smiley-no.gif" />
+</div> <!-- end of col -->
+</div> <!-- end of row -->
+<div class="container" id="quizarea">
+</div> <!-- end of container-->
+<p align="center" id="nextarea"><img src="../img/next2.gif"  class="img-responsive" /></p>
+</div>
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/admob_simple.js"></script>
+</body>
+</html>

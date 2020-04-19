@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Site Title -->
+    <title></title>				
+
+	<!-- Stylesheet--> 
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+	<style type="text/css">
+	.new-product .owl-nav
+	{
+	
+	}
+	.owl-thumb-item img {
+        width: 50px;
+        height: auto;
+    }
+.owl-thumbs {
+        
+        bottom: 0;
+        left: 0;
+		
+        width: 100%;
+        text-align: center;
+        padding:1px;
+		
+		
+    }
+
+    .owl-thumb-item {
+	
+        display:inline;
+        border: none;
+        background: none;
+        padding: 0;
+        opacity: .7;
+	
+    }
+
+    .owl-thumb-item.active,
+	.owl-thumb-item:hover
+	{
+        opacity: 1;
+    }
+	p
+	{ background:rgba(0,0,0,0.8);
+	color:white;
+	padding:10px;
+	text-align:right;
+	font-size:20px;
+	}
+	</style>
+</head>
+<body style="background:url(../img/kidsback.jpg) repeat;">
+<audio id="myvoice" preload="none"></audio>
+
+<section class="new-product-area overflow-fix">
+	<div class="new-product overflow-fix  owl-theme owl-carousel" data-slider-id="1">
+		<div class="single-new-product overflow-fix" >
+			 <img src="../img/dolphin.jpg" alt="dolphin" class="myimg"  />
+			 <p>டால்பின்</p>
+<div class="dora" ></div>
+		</div>
+		<div class="single-new-product overflow-fix" >
+			 <img src="../img/iraalmeen.jpg" alt="iraalmeen" class="myimg"  />
+			 <p>இறால் மீன் </p>
+<div class="dora" ></div>
+
+		</div>
+		<div class="single-new-product overflow-fix" >
+			 <img src="../img/jellymeen.jpg" alt="jellymeen" class="myimg"  />
+			 <p>ஜெல்லிமீன் </p>
+<div class="dora" ></div>
+
+		</div>
+		<div class="single-new-product overflow-fix" >
+			<img src="../img/kadarkuthirai.jpg" alt="kadarkuthirai" class="myimg"  />
+			<p>கடற்குதிரை </p>
+<div class="dora" ></div>
+
+		</div>
+		<div class="single-new-product overflow-fix" >
+			<img src="../img/nandu.jpg" alt="nandu" class="myimg"  />
+			<p>நண்டு</p>
+<div class="dora" ></div>
+
+		</div>
+		<div class="single-new-product overflow-fix" >
+			<img src="../img/octopus.jpg" alt="octopus" class="myimg"  />
+			<p>ஆக்டோபஸ் </p>
+<div class="dora" ></div>
+
+		</div>
+		<div class="single-new-product overflow-fix" >
+			<img src="../img/singameen.jpg" alt="singameen" class="myimg"  />
+			<p>சிங்கமீன் </p>
+<div class="dora" ></div>
+
+		</div><div class="single-new-product overflow-fix" >
+			<img src="../img/sura.jpg" alt="sura" class="myimg"  />
+			<p>சுறா </p>
+<div class="dora" ></div>
+
+		</div>
+		<div class="single-new-product overflow-fix" >
+			<img src="../img/thimingalam.jpg" alt="thimingalam" class="myimg"  />
+			<p>திமிங்கலம்</p>
+<div class="dora" ></div>
+
+		</div><div class="single-new-product overflow-fix" >
+			<img src="../img/vilaangu.jpg" alt="vilaangu" class="myimg"  />
+			<p>விலாங்கு </p>
+<div class="dora" ></div>
+
+		</div>
+		
+		
+	</div>
+<!-- <div class="custom-next">NEXT</div>
+<div class="custom-prev">PREV</div> -->
+</section>
+
+
+
+
+	<!-- SCRIPTS -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+
+	<script>
+$(document).ready(function(){
+
+//$(".myimg").trigger("click");
+window.localStorage.setItem("page", "any");
+$(".myimg").click(function(){
+	var attr = $(this).attr("alt");
+var indx = $('div.active').index();
+
+var src1 = "kapilan-talk-short.gif"+"?a="+Math.random();
+var imgsrc = '<img src="../img/' + src1 + '" style="width:140px;height:180px;"  />';
+	$(".dora").eq(indx).html(imgsrc);
+
+
+	$("#myvoice").get(0).src= "../img/" + attr + ".mp3";
+	$("#myvoice").get(0).play();
+
+}); 
+
+		$('.new-product').owlCarousel({
+		thumbs: true,
+			thumbImage: true,
+			
+thumbContainerClass: 'owl-thumbs',
+thumbItemClass: 'owl-thumb-item',
+						loop:true,
+			margin:5,
+			nav:true,
+			navText: ["<img src='../img/prev.png' class='img-responsive'>","<img src='../img/next.png' class='img-responsive'  >"],
+			dots:false,
+			onDragged: callfunc,
+			onInitialized: callfunc,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:3
+				}
+			}
+		});
+
+function callfunc(event)
+{
+	var indx = event.item.index;
+	
+		var attr = $(".myimg").eq(indx).attr("alt");
+var src1 = "kapilan-talk-short.gif"+"?a="+Math.random();
+var imgsrc = '<img src="../img/' + src1 + '" style="width:140px;height:180px;"  />';
+	$(".dora").eq(indx).html(imgsrc);
+
+$("#myvoice").get(0).src= "../img/" + attr + ".mp3";
+	$("#myvoice").get(0).play();
+	if(attr == "vilaangu")
+{
+	
+	showAds();
+}
+else if(attr == "octopus")
+	{
+		prepareAds();
+	}
+}
+$(".owl-next").on("click",function(){
+	var indx = $('div.active').index();
+var attr = $(".myimg").eq(indx).attr("alt");
+var src1 = "kapilan-talk-short.gif"+"?a="+Math.random();
+var imgsrc = '<img src="../img/' + src1 + '" style="width:140px;height:180px;"  />';
+	$(".dora").eq(indx).html(imgsrc);
+
+$("#myvoice").get(0).src= "../img/" + attr + ".mp3";
+	$("#myvoice").get(0).play();
+	if(attr == "vilaangu")
+{
+	
+	showAds();
+}else if(attr == "octopus")
+	{
+		prepareAds();
+	}
+	
+});
+
+$(".owl-prev").on("click",function(){
+	var indx =$('div.active').index();
+var attr = $(".myimg").eq(indx).attr("alt");
+var src1 = "kapilan-talk-short.gif"+"?a="+Math.random();
+var imgsrc = '<img src="../img/' + src1 + '" style="width:140px;height:180px;"  />';
+	$(".dora").eq(indx).html(imgsrc);
+
+$("#myvoice").get(0).src= "../img/" + attr + ".mp3";
+	$("#myvoice").get(0).play();
+
+	
+});
+
+
+});
+	</script>
+	<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/admob_simple.js"></script>
+</body>
+</html>

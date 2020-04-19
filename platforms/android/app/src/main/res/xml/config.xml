@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.akkaapps.kidsapptamil" version="3.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="AdMob">
+        <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="InAppBillingV3">
+        <param name="android-package" value="com.alexdisler.inapppurchases.InAppBillingV3" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
+    <name>Super Spider Tamil Learning </name>
+    <description>
+       Super Akku and Spider Kapi Interactive Tamil Learning application for  kids
+    </description>
+    <author email="support@akkaapps.com" href="http://www.akkaapps.com">
+        AkKa Apps Development Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/icon/android/icon-36-ldpi.png" />
+    <icon density="mdpi" src="res/icon/android/icon-48-mdpi.png" />
+    <icon density="hdpi" src="res/icon/android/icon-72-hdpi.png" />
+    <icon density="xhdpi" src="res/icon/android/icon-96-xhdpi.png" />
+    <icon density="xxhdpi" src="res/icon/android/icon-xxhdpi.png" />
+    <icon density="xxxhdpi" src="res/icon/android/icon-xxxhdpi.png" />
+    <splash density="land-hdpi" src="res/screen/android/screen-hdpi-landscape.png" />
+    <splash density="land-ldpi" src="res/screen/android/screen-ldpi-landscape.png" />
+    <splash density="land-mdpi" src="res/screen/android/screen-mdpi-landscape.png" />
+    <splash density="land-xhdpi" src="res/screen/android/screen-xhdpi-landscape.png" />
+    <splash density="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
+    <splash density="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+    <splash density="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+    <splash density="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="android-targetSdkVersion" value="28" />
+</widget>

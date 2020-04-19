@@ -1,0 +1,133 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "AndroidManifest.xml": {
+        "parents": {
+          "/manifest/application": [
+            {
+              "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
+              "count": 1
+            },
+            {
+              "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:exported=\"false\" android:name=\"com.onesignal.ADMMessageHandler\" />",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.akkaapps.kidsapptamil\" /></intent-filter></receiver>",
+              "count": 1
+            }
+          ],
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "count": 1
+            }
+          ],
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"com.amazon.device.messaging.permission.RECEIVE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<permission android:name=\"com.akkaapps.kidsapptamil.permission.RECEIVE_ADM_MESSAGE\" android:protectionLevel=\"signature\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"com.akkaapps.kidsapptamil.permission.RECEIVE_ADM_MESSAGE\" />",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"InAppBillingV3\"><param name=\"android-package\" value=\"com.alexdisler.inapppurchases.InAppBillingV3\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-extension": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-admobpro": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-inapppurchase": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-admobpro.AdMob",
+      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+      "pluginId": "cordova-plugin-admobpro",
+      "clobbers": [
+        "window.AdMob"
+      ]
+    },
+    {
+      "id": "cordova-plugin-inapppurchase.InAppBillingV3",
+      "file": "plugins/cordova-plugin-inapppurchase/www/index-android.js",
+      "pluginId": "cordova-plugin-inapppurchase",
+      "merges": [
+        "inAppPurchase"
+      ]
+    },
+    {
+      "id": "onesignal-cordova-plugin.OneSignal",
+      "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+      "pluginId": "onesignal-cordova-plugin",
+      "clobbers": [
+        "OneSignal"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-extension": "1.5.4",
+    "cordova-plugin-admobpro": "2.31.6",
+    "cordova-plugin-inapppurchase": "1.1.0",
+    "cordova-plugin-whitelist": "1.3.3",
+    "onesignal-cordova-plugin": "2.3.3"
+  }
+}

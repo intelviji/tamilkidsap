@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Site Title -->
+    <title></title>				
+
+	<!-- Stylesheet 
+    <link rel="stylesheet" href="../css/index.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+	
+</head>
+<style type="text/css">
+p {
+    font-size:24px;
+    font-family: Lato;
+
+}
+#msg {
+    color:red;
+}
+.viji {
+    background-color:aliceblue;
+    background-image: none; 
+    height:-webkit-fill-available;
+}
+
+</style>
+<body   >
+<div class="container-fluid viji">
+        <div class="row">
+                <div class="col-xs-2 col-sm-2 col-lg-2"></div>
+        </div>
+    <div class="row" id="parentvalidation">
+        <div class="col-xs-2 col-sm-2 col-lg-2"></div>
+        <div class="col-xs-9 col-sm-9 col-lg-7">
+            <br />
+            <br />
+                <p>if you are the parent, please answer below question.</p>
+                <p>What is <span id="qs"></span></p>
+                <p><input type="number" id="answer" /><input  type="button" value="GO" id="go" class="btn btn-lg" /></p>
+                <p id="msg"> </p>
+                
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-xs-2 col-sm-2 col-lg-2"></div>
+            <div class="col-10 col-xs-9 col-sm-9 col-lg-7">
+                <div id="productDetails">
+                        <h2 class="title">In App Purchase - Remove Ads Feature</h2> <br />
+                        <p>One Time purchase and life time access to the app without ads. Access in all the devices.</p>
+                       <br /> 
+                       
+                       <h3 id="price" > </h3>
+                        <input type="button" id="buynow" value="Buy Now" class="btn btn-lg btn-primary"  />
+                        <input type="button" id="restore" value="Restore Purchase" class="btn btn-lg btn-info"  />
+                        <p> Enormous time and effort has been spent to develop such free apps. A small amount would help to develop such free apps in future.</p>
+                       <p> If there is any issue in purchasing, please contact the support : support@akkaapps.com</p> 
+                </div>
+            </div>
+    </div>
+   
+</div>  
+
+
+	<!-- SCRIPTS -->
+    <script src="../js/jquery.min.js"></script>
+
+	<script>
+$(document).ready(function(){
+    var a = [5,4,3];
+    var b = [3,2,1];
+    window.localStorage.setItem("page", "remove");
+    var ar = a[Math.floor(Math.random()*a.length)];
+    var br = b[Math.floor(Math.random()*b.length)];
+    var purchase = 0;
+    $("#productDetails").hide();
+    $("#parentvalidation").show();
+    $("#qs").text(ar + " + " + br + " = ? " );
+    $("#buynow").click(function(){
+        buynow();
+    })
+    $("#restore").click(function(){
+        restore();
+    })
+    $("#go").click(function(){
+        var answer = $("#answer").val();
+        
+        var ans = ar + br;
+        if(answer == ans)
+        {
+            $("#parentvalidation").hide();
+            showDetails();
+            $("#productDetails").show("slow");
+            
+            purchase = 1;
+        }
+        else   
+        {
+            $("#productDetails").hide();
+            purchase = 0;
+
+            $("#msg").text("Please Try Again");
+            $("#answer").val("");
+            $("#answer").focus();
+        }
+           
+            
+    })
+
+});
+	</script>
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/admob_simple.js"></script> 
+</body>
+</html>
