@@ -37,7 +37,7 @@ div#memory_board
 }
 div.col-xs-2
 {
-	//border:#000 1px solid; 
+	
 padding:0;
 	margin:0;
 text-align:center;
@@ -45,7 +45,7 @@ text-align:center;
 }
 	div.col-xs-4
 {
-	//border:#000 1px solid; 
+	
 padding:1px;
 	margin:0;
 text-align:center;
@@ -110,6 +110,7 @@ var stage = 1;
 $("#dialog").hide();
 $("#gamearea").hide();
 $("#levels").show("slow");
+$("#mainback").show();
 $("#levels a").click(function(event){
 event.preventDefault();
 stage = $(this).data("stage");
@@ -129,6 +130,7 @@ Array.prototype.memory_tile_shuffle = function(){
     }
 }
 $.fn.newBoard = function(stage){
+	//$("#mainback").hide();
 	tiles_flipped = 0;
 	var output = '';
 var jcount = 3;
@@ -210,6 +212,7 @@ else
 		i--;
 	}
 	$('#memory_board').html(output);
+	
 }
 
 
@@ -322,6 +325,7 @@ event.preventDefault();
 
 $( "#dialog" ).dialog( "close" );
 $("#levels").slideDown("slow");
+$("#mainback").show();
 $("#gamearea").hide("slow");
 });
 
@@ -345,7 +349,10 @@ $(window).resize(function() {
 
 </head>
 <body style="background:url(../img/newbg.jpg) repeat pink;background-size:cover;">
-<div id="levels" style="margin-top:15%;">
+	<a  href="games.html" class="btn btn-primary btn-lg" id="mainback">
+		<img src='../img/prev.png' class='img-responsive' style="float:left;width:23px;"> Back 
+	 </a>
+<div id="levels" >
 <div class="container">
 <div class="row">
 <div class="col-xs-12 col-md-12">

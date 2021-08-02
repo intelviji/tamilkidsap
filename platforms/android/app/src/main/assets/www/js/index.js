@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+let admob=null;
 var admobid = {};
 var localStorage = window.localStorage; 
 if( /(android)/i.test(navigator.userAgent) ) { 
@@ -37,16 +38,17 @@ if( /(android)/i.test(navigator.userAgent) ) {
 
 if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
     document.addEventListener('deviceready', initApp, false);
-} else {
-    initApp();
+} else {initApp();
 }
 
 function initApp() {
     var localitem="";
     var mypage="";
-	if(AdMob)
+    admob = window.plugins.AdMob || window.AdMob; 
+    
+	if(admob)
 	{
-			AdMob.hideBanner();
+        admob.banner.hide();
 	}
 	else{ alert( 'admob plugin not ready' ); return; }
 
@@ -66,8 +68,7 @@ function initApp() {
         localStorage.setItem("page", "any");
         localStorage.setItem("purchased", "no");
     }
-        
-    
+       
 
 	window.plugins.OneSignal
     .startInit("1a58cabd-8b19-47c4-bd17-a7f7410bd616")

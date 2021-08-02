@@ -1,8 +1,8 @@
 {
   "_from": "onesignal-cordova-plugin",
-  "_id": "onesignal-cordova-plugin@2.3.3",
+  "_id": "onesignal-cordova-plugin@2.9.0",
   "_inBundle": false,
-  "_integrity": "sha512-NcCvoq+w7i64LVPrsrXvxp25WI3ZDrL+RSEg8eYfaUIWFEIQT0vh4R5awBda9gyrN5T+MMsHiRIpxSlb70ACYg==",
+  "_integrity": "sha512-G8rNgRHdOzVhS1JkGkPEnTrbNfWGQ2Mfj3VdR5aB0/wUEsgGRq7prvms5cknVVc4/tN0dHpqLk73yukNtDKEXw==",
   "_location": "/onesignal-cordova-plugin",
   "_phantomChildren": {},
   "_requested": {
@@ -19,12 +19,12 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.3.3.tgz",
-  "_shasum": "50879411a23c7152f0d89a77248208144f490df1",
+  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.9.0.tgz",
+  "_shasum": "1e93b1bee1843e6f7375a2557ffebd5fd3fb46c7",
   "_spec": "onesignal-cordova-plugin",
-  "_where": "C:\\Users\\Bala\\tamilkidsapp",
+  "_where": "/Users/satishmadan/Desktop/vijiapp/tamilkidsapp",
   "author": {
-    "name": "Josh Kasten & Brad Hesse"
+    "name": "Josh Kasten, Brad Hesse, Rodrigo Gomez-Palacio"
   },
   "bugs": {
     "url": "https://github.com/onesignal/OneSignal-Cordova-SDK/issues"
@@ -92,5 +92,5 @@
     "type": "git",
     "url": "git+https://github.com/onesignal/OneSignal-Cordova-SDK.git"
   },
-  "version": "2.3.3"
+  "version": "2.9.0"
 }

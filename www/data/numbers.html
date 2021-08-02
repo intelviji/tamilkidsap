@@ -181,7 +181,11 @@
 </head>
 <body style="background:url(../img/bus.png) no-repeat purple;background-size:cover;max-width:100%;min-width:100%;">
 <audio id="myvoice" preload="none"></audio>
+<a  href="../index.html" class="btn btn-warning btn-lg" id="mainback" >
+	<img src='../img/prev.png' class='img-responsive' style="float:left;width:23px;">  Back
+ </a>
 <div class="container-fluid" id="menus">
+
 <div class="row">
 	<div class="col-xs-6 col-sm-6 col-md-6">
 	<a id="oneclick"><img src="../img/numbers/1.jpg" class="img-responsive"  />
@@ -230,9 +234,11 @@ $(document).on("click","#goback",function(){
 $("#content-wrap").html("");
 $("#content-wrap").hide();
 $("#menus").show();
+$("#mainback").show();
 });
 $("#oneclick").click(function(){
 $("#menus").hide();
+$("#mainback").hide();
 var output = '<a id="goback">Go Back</a><section class="new-product-area overflow-fix"><div class="new-product overflow-fix  owl-theme owl-carousel" data-slider-id="1">';
 for(var i=1;i<=10;i++)
 {
@@ -266,6 +272,7 @@ $('.new-product').owlCarousel({
 });
 $("#tenclick").click(function(){
 $("#menus").hide();
+$("#mainback").hide();
 var output = '<a id="goback">Go Back</a><section class="new-product-area overflow-fix"><div class="new-product overflow-fix  owl-theme owl-carousel" data-slider-id="1">';
 for(var i=10;i<=100;i+=10)
 {
@@ -301,6 +308,8 @@ $('.new-product').owlCarousel({
 });
 $("#fiftyclick").click(function(){
 $("#menus").hide();
+$("#mainback").hide();
+
 $("#content-wrap").show();
 var output = '<a id="goback">Go Back</a><div class="container-fluid">';
 for(var i=1;i<=50;i++)
@@ -319,6 +328,7 @@ $("#content-wrap").html(output);
 $("#hundredclick").click(function(){
 $("#content-wrap").show();
 $("#menus").hide();
+$("#mainback").hide();
 var output = '<a id="goback">Go Back</a><div class="container-fluid">';
 for(var i=1;i<=100;i++)
 {

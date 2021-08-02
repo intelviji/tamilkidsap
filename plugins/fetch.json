@@ -23,6 +23,14 @@
     "is_top_level": false,
     "variables": {}
   },
+  "cordova-plugin-inapppurchase": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inapppurchase"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
   "onesignal-cordova-plugin": {
     "source": {
       "type": "registry",
@@ -31,18 +39,44 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-admobpro": {
+  "cordova-promise-polyfill": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-admobpro"
+      "id": "cordova-promise-polyfill@~0.0.2"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-admob-sdk": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-admob-sdk@~0.24.1"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-admob-free": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admob-free"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ADMOB_APP_ID": "ca-app-pub-3811141053801373~1514603630"
+    }
+  },
+  "cordova-plugin-wkwebview-engine": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-wkwebview-engine"
     },
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-inapppurchase": {
+  "cordova-plugin-migrate-localstorage": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-inapppurchase"
+      "id": "cordova-plugin-migrate-localstorage"
     },
     "is_top_level": true,
     "variables": {}

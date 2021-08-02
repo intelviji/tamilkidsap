@@ -9,10 +9,6 @@
         "parents": {
           "/manifest/application": [
             {
-              "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
-              "count": 1
-            },
-            {
               "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
               "count": 1
             },
@@ -22,6 +18,14 @@
             },
             {
               "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.akkaapps.kidsapptamil\" /></intent-filter></receiver>",
+              "count": 1
+            },
+            {
+              "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
+              "count": 1
+            },
+            {
+              "xml": "<meta-data android:name=\"com.google.android.gms.ads.APPLICATION_ID\" android:value=\"ca-app-pub-3811141053801373~1514603630\" />",
               "count": 1
             }
           ],
@@ -59,10 +63,6 @@
         "parents": {
           "/*": [
             {
-              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"InAppBillingV3\"><param name=\"android-package\" value=\"com.alexdisler.inapppurchases.InAppBillingV3\" /></feature>",
               "count": 1
             },
@@ -73,6 +73,10 @@
             {
               "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"name.ratson.cordova.admob.AdMob\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -80,12 +84,6 @@
     }
   },
   "installed_plugins": {
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
-    },
-    "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
-    },
     "cordova-plugin-inapppurchase": {
       "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
     },
@@ -94,18 +92,28 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-promise-polyfill": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-admob-sdk": {
+      "PLAY_SERVICES_VERSION": "11.0.4",
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-admob-free": {
+      "ADMOB_APP_ID": "ca-app-pub-3811141053801373~1514603630",
+      "PLAY_SERVICES_VERSION": "11.0.4",
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-migrate-localstorage": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
     }
   },
   "dependent_plugins": {},
   "modules": [
-    {
-      "id": "cordova-plugin-admobpro.AdMob",
-      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-      "pluginId": "cordova-plugin-admobpro",
-      "clobbers": [
-        "window.AdMob"
-      ]
-    },
     {
       "id": "cordova-plugin-inapppurchase.InAppBillingV3",
       "file": "plugins/cordova-plugin-inapppurchase/www/index-android.js",
@@ -121,13 +129,37 @@
       "clobbers": [
         "OneSignal"
       ]
+    },
+    {
+      "id": "cordova-promise-polyfill.Promise",
+      "file": "plugins/cordova-promise-polyfill/www/Promise.js",
+      "pluginId": "cordova-promise-polyfill",
+      "runs": true
+    },
+    {
+      "id": "cordova-promise-polyfill.promise.min",
+      "file": "plugins/cordova-promise-polyfill/www/promise.min.js",
+      "pluginId": "cordova-promise-polyfill"
+    },
+    {
+      "id": "cordova-plugin-admob-free.AdMob",
+      "file": "plugins/cordova-plugin-admob-free/www/admob.js",
+      "pluginId": "cordova-plugin-admob-free",
+      "clobbers": [
+        "admob",
+        "AdMob",
+        "plugins.AdMob"
+      ]
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-extension": "1.5.4",
-    "cordova-plugin-admobpro": "2.31.6",
     "cordova-plugin-inapppurchase": "1.1.0",
     "cordova-plugin-whitelist": "1.3.3",
-    "onesignal-cordova-plugin": "2.3.3"
+    "onesignal-cordova-plugin": "2.9.0",
+    "cordova-promise-polyfill": "0.0.2",
+    "cordova-admob-sdk": "0.24.1",
+    "cordova-plugin-admob-free": "0.27.0",
+    "cordova-plugin-wkwebview-engine": "1.2.1",
+    "cordova-plugin-migrate-localstorage": "0.0.2"
   }
 }
