@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
-    },
     "cordova-plugin-inapppurchase": {
       "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
     },
@@ -18,10 +15,25 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-admob-free": {
+      "ADMOB_APP_ID": "ca-app-pub-3811141053801373~1514603630",
+      "PLAY_SERVICES_VERSION": "11.0.4",
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-plugin-migrate-localstorage": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-extension": {
+    "cordova-promise-polyfill": {
+      "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
+    },
+    "cordova-admob-sdk": {
+      "PLAY_SERVICES_VERSION": "11.0.4",
       "PACKAGE_NAME": "com.akkaapps.kidsapptamil"
     }
   }

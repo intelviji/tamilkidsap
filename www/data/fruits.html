@@ -21,7 +21,11 @@
 </head>
 <body style="background:url(../img/newbg.jpg) repeat;">
 <audio id="myvoice" preload="none"></audio>
-
+<div style="padding:10px;background-color:aqua">
+	<a  href="../index.html"  >
+		<img src='../img/prev.png' class='img-responsive' style="float:left;width:35px;"> <h2>Back</h2> 
+	 </a>
+	 </div>
 <section class="new-product-area overflow-fix">
 	<div class="new-product overflow-fix  owl-theme owl-carousel" data-slider-id="1">
 		<div class="single-new-product overflow-fix" >
@@ -134,6 +138,7 @@ var imgsrc = '<img src="../img/' + src1 + '" style="width:140px;height:180px;"  
 		$('.new-product').owlCarousel({
 						loop:true,
 			margin:5,
+			responsiveClass: true,
 			nav:true,
 			navText: ["<img src='../img/prev.png' class='img-responsive'>","<img src='../img/next.png' class='img-responsive'  >"],
 			dots:false,
@@ -147,6 +152,7 @@ var imgsrc = '<img src="../img/' + src1 + '" style="width:140px;height:180px;"  
 					items:1
 				},
 				1000:{
+					
 					items:3
 				}
 			}

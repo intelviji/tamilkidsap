@@ -58,6 +58,7 @@ $("#quiz-content").hide();
 $("#level1").click(function(){
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#pass").hide();
 $("#fail").hide();
 $("#nextarea").hide();
@@ -86,6 +87,7 @@ $("#fail").hide();
 $("#nextarea").hide();
 $("#clap").get(0).pause();
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "circle.mp3",option1 : "circle.png", option2: "square.png", option3 : "oval.png", option4 : "rectangle.png", answer : "circle.png"},
 {question : "oval.mp3",option1 : "circle.png", option2: "oval.png", option3 : "square.png", option4 : "rectangle.png", answer : "oval.png"},
@@ -105,6 +107,7 @@ $("#nextarea").hide();
 $("#clap").get(0).pause();
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "rhino.mp3",option1 : "rhino.jpg", option2: "singam.jpg", option3 : "onaai.jpg", option4 : "paambu.jpg", answer : "rhino.jpg"},
 {question : "singam.mp3",option1 : "nathai.jpg", option2: "puli.jpg", option3 : "singam.jpg", option4 : "nari.jpg", answer : "singam.jpg"},
@@ -136,6 +139,7 @@ $("#nextarea").hide();
 $("#clap").get(0).pause();
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "butterfly.mp3",option1 : "butterfly.jpg", option2: "thel.jpg", option3 : "e.jpg", option4 : "cricketpoochi.jpg", answer : "butterfly.jpg"},
 {question : "cricketpoochi.mp3",option1 : "e.jpg", option2: "vandu.jpg", option3 : "cricketpoochi.jpg", option4 : "erumbu.jpg", answer : "cricketpoochi.jpg"},
@@ -158,6 +162,7 @@ $("#nextarea").hide();
 $("#clap").get(0).pause();
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "eli.mp3",option1 : "e.jpg", option2: "erumbu.jpg", option3 : "eli.jpg", option4 : "kaalai.jpg", answer : "eli.jpg"},
 {question : "erumai.mp3",option1 : "nathai.jpg", option2: "puli.jpg", option3 : "singam.jpg", option4 : "kuthirai.jpg", answer : "erumai.jpg"},
@@ -182,6 +187,7 @@ $("#nextarea").hide();
 $("#clap").get(0).pause();
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "dolphin.mp3",option1 : "jellymeen.jpg", option2: "kadarkuthirai.jpg", option3 : "nandu.jpg", option4 : "dolphin.jpg", answer : "dolphin.jpg"},
 {question : "iraalmeen.mp3",option1 : "jellymeen.jpg", option2: "nandu.jpg", option3 : "iraalmeen.jpg", option4 : "kadarkuthirai.jpg", answer : "iraalmeen.jpg"},
@@ -205,6 +211,7 @@ $("#nextarea").hide();
 $("#clap").get(0).pause();
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "duck.mp3",option1 : "eagle.jpg", option2: "vulture.jpg", option3 : "duck.jpg", option4 : "pura.jpg", answer : "duck.jpg"},
 {question : "eagle.mp3",option1 : "nathai.jpg", option2: "eagle.jpg", option3 : "kili.jpg", option4 : "parunthu.jpg", answer : "eagle.jpg"},
@@ -236,6 +243,7 @@ $("#nextarea").hide();
 $("#clap").get(0).pause();
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "apple.mp3",option1 : "guava.jpg", option2: "banana.jpg", option3 : "apple.jpg", option4 : "fig.jpg", answer : "apple.jpg"},
 {question : "banana.mp3",option1 : "dates.jpg", option2: "banana.jpg", option3 : "fig.jpg", option4 : "jackfruit.jpg", answer : "banana.jpg"},
@@ -264,6 +272,7 @@ $("#nextarea").hide();
 $("#clap").get(0).pause();
 loop_index = 0;
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "avarai.mp3",option1 : "capsicum.jpg", option2: "avarai.jpg", option3 : "beans.jpg", option4 : "beetroot.jpg", answer : "avarai.jpg"},
 {question : "beans.mp3",option1 : "brinjal.jpg", option2: "cabbage.jpg", option3 : "beans.jpg", option4 : "capsicum.jpg", answer : "beans.jpg"},
@@ -299,6 +308,7 @@ $("#fail").hide();
 $("#nextarea").hide();
 $("#clap").get(0).pause();
 $("#menus").hide();
+$("#mainback").hide();
 $("#quiz-content").show();
 quiz = [{ question : "cheeks.mp3",option1 : "ears.jpg", option2: "fingers.jpg", option3 : "cheeks.jpg", option4 : "hair.jpg", answer : "cheeks.jpg"},
 {question : "ears.mp3",option1 : "hand.jpg", option2: "kangal.jpg", option3 : "knees.jpg", option4 : "ears.jpg", answer : "ears.jpg"},
@@ -382,11 +392,13 @@ $(document).on("click","#endcard",function(){
 
 $("#quiz-content").hide();
 $("#menus").show();
+$("#mainback").show();
 });
 $("#goback").click(function(){
 
 $("#quiz-content").hide();
 $("#menus").show();
+$("#mainback").show();
 });
 $("#help").click(function(){
 
@@ -407,7 +419,9 @@ $('input[type="radio"]').each(function(index){
 </script>
 </head>
 <body>
-
+	<a  href="games.html" class="btn btn-primary btn-lg" id="mainback">
+		<img src='../img/prev.png' class='img-responsive' style="float:left;width:23px;"> Back 
+	 </a>
 <div class="container" id="menus">
 	<div class="row">
 		<div class="col-xs-2 col-md-2 col-lg-3">

@@ -10,23 +10,31 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-android": "^8.0.0",
-    "cordova-plugin-admobpro": "^2.31.6",
-    "cordova-plugin-extension": "^1.5.4",
+    "cordova-admob-sdk": "^0.24.1",
+    "cordova-android": "^8.1.0",
+    "cordova-ios": "^5.1.1",
+    "cordova-plugin-admob-free": "^0.27.0",
     "cordova-plugin-inapppurchase": "^1.2.0",
+    "cordova-plugin-migrate-localstorage": "0.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
-    "onesignal-cordova-plugin": "^2.3.3"
+    "cordova-plugin-wkwebview-engine": "^1.2.1",
+    "cordova-promise-polyfill": "0.0.2",
+    "onesignal-cordova-plugin": "^2.9.0"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "onesignal-cordova-plugin": {},
-      "cordova-plugin-admobpro": {},
       "cordova-plugin-inapppurchase": {},
-      "Storage": {}
+      "onesignal-cordova-plugin": {},
+      "cordova-plugin-admob-free": {
+        "ADMOB_APP_ID": "ca-app-pub-3811141053801373~1514603630"
+      },
+      "cordova-plugin-wkwebview-engine": {},
+      "cordova-plugin-migrate-localstorage": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "devDependencies": {}

@@ -1,9 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.akkaapps.kidsapptamil" version="3.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="AdMob">
-        <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin" />
-        <param name="onload" value="true" />
-    </feature>
+<widget id="com.akkaapps.kidsapptamil" version="4.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="InAppBillingV3">
         <param name="android-package" value="com.alexdisler.inapppurchases.InAppBillingV3" />
     </feature>
@@ -14,9 +10,13 @@
     <feature name="OneSignalPush">
         <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
     </feature>
-    <name>Super Spider Tamil Learning </name>
+    <feature name="AdMob">
+        <param name="android-package" value="name.ratson.cordova.admob.AdMob" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>Interactive Tamil Learning </name>
     <description>
-       Super Akku and Spider Kapi Interactive Tamil Learning application for  kids
+      Interactive Tamil Learning application for  kids
     </description>
     <author email="support@akkaapps.com" href="http://www.akkaapps.com">
         AkKa Apps Development Team

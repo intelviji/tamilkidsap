@@ -28,7 +28,11 @@
 </head>
 <body style="background:url(../img/newbg.jpg) no-repeat pink;background-size:cover;">
 <audio id="myvoice" preload="none"></audio>
-
+<div style="padding:5px;background-color: aqua;">
+<a  href="../index.html" style="font-size:18px;color:black;" >
+	<img src='../img/prev.png' class='img-responsive' style="float:left;width:23px;"> Back 
+ </a>
+ </div>
 <section class="new-product-area overflow-fix" >
 	<div class="new-product overflow-fix  owl-theme owl-carousel" data-slider-id="1">
 		<div class="single-new-product overflow-fix" >
@@ -127,6 +131,8 @@
 
 
 	<!-- SCRIPTS -->
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script type="text/javascript" src="../js/admob_simple.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
 	<script>
@@ -215,7 +221,7 @@ src1 = "talk-short.gif"+"?a="+Math.random(); }
 var imgsrc = '<img src="../img/' + src1 + '" style="width:140px;height:180px;"  />';
 	$(".dora").eq(indx).html(imgsrc);
 	if(attr == "toes")
-		{
+		{    
 			showAds();
 		}
 	else if(attr == "tongue")
@@ -245,7 +251,6 @@ $("#myvoice").get(0).src= "../img/" + attr + ".mp3";
 });
 });
 	</script>
-	<script type="text/javascript" src="../cordova.js"></script>
-	<script type="text/javascript" src="../js/admob_simple.js"></script>
+	
 </body>
 </html>
