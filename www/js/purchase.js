@@ -7,7 +7,7 @@ function showDetails()
 {
     var output = '';
     console.log("showDetails");
-  alert("second");
+
   inAppPurchase
   .getProducts(productIds)
   .then(function (products) {
@@ -26,10 +26,9 @@ function showDetails()
     alert(err);
   });
     
-    alert("third");
 }
 function initApp() {
-alert("comes here viji2");
+
 if (! inAppPurchase ) { alert( 'purchase plugin not ready' ); return; }
   
 }

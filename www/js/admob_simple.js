@@ -28,7 +28,9 @@ function createBannerAd()
   // this will create a banner on startup
   admob.banner.config({
     id: admobid.banner,
-    autoShow: true
+    autoShow: true,
+    forChild: true,
+    forFamily: true
 });
 admob.banner.prepare();
 admob.banner.show();
@@ -37,7 +39,9 @@ function prepareAds()
 {
   admob.interstitial.config({
     id: admobid.interstitial,
-    autoShow: false
+    autoShow: false,
+    forChild: true,
+    forFamily: true
 });
 admob.interstitial.prepare();
 }
